@@ -30,11 +30,26 @@ class AppTheme{
           color: _colorTheme[selectedThemeColor],
           fontSize: 20,
         ),
-      ),
+        bodyMedium: TextStyle(
+          color: _colorTheme[selectedThemeColor],
+          fontSize: 18,
+        ),
+        labelLarge: TextStyle(
+          color: _colorTheme[selectedThemeColor],
+          fontSize: 20,
+        ),
+     ),
       appBarTheme: AppBarTheme(
         color: _colorTheme[selectedThemeColor],
         foregroundColor: Colors.white,
       ),
+      bottomAppBarTheme: BottomAppBarTheme(
+        color: _colorTheme[selectedThemeColor],
+        elevation: 0,
+      ),
+
+
+
 
     );
   }
