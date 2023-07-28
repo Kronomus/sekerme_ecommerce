@@ -5,7 +5,7 @@
 import 'package:go_router/go_router.dart';
 
 //Archivo que contiene los links de las vistas
-import 'package:sekerme_ecommerce/app/presentation/views/views_links.dart';
+import 'package:mamitas/app/presentation/views/views_links.dart';
 
 
 final appRouter = GoRouter(
