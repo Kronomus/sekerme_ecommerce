@@ -79,7 +79,7 @@ flutter:
     - assets/images/
     - assets/fonts/
     - assets/icons/
-    - assets/global/.env
+    - assets/global/
 
   #   - images/a_dot_ham.jpeg
 
