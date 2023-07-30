@@ -44,14 +44,16 @@ class LoginView extends StatelessWidget {
                     hintText: 'Enter your email',
                     labelText: 'Email',
                     textInputType: TextInputType.emailAddress,
-                    obscureText: false
+                    obscureText: false,
+                    suffixIcon: false,
                 ),
                 const SizedBox(height: 16.0),
                 const MyTextForm(
                     hintText: 'Enter your password',
                     labelText: 'Password',
                     textInputType: TextInputType.visiblePassword,
-                    obscureText: true
+                    obscureText: true,
+                    suffixIcon: true,
                 ),
                 const SizedBox(height: 16.0),
                 Padding(

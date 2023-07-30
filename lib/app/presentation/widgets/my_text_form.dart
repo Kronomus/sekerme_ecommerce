@@ -7,13 +7,16 @@ class MyTextForm extends StatelessWidget {
   final String hintText;
   final TextInputType textInputType;
   final bool obscureText;
+  final bool suffixIcon;
+
 
   const MyTextForm({
     super.key,
     required this.labelText,
     required this.hintText,
     required this.textInputType,
-    required this.obscureText
+    required this.obscureText,
+    required this.suffixIcon
   });
 
   @override
@@ -37,11 +40,15 @@ class MyTextForm extends StatelessWidget {
         decoration: InputDecoration(
           labelText: labelText,
           hintText: hintText,
-
+          hintStyle: TextStyle(
+            color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
+          ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8.0),
           ),
         ),
+
+
       ),
     );
   }
