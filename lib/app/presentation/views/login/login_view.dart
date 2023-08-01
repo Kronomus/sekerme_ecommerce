@@ -16,6 +16,7 @@ class LoginView extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.all(8.0),
             child: Column(
+              crossAxisAlignment:  CrossAxisAlignment.center,
               children: [
                 //Logo
                 SvgPicture.asset('assets/images/MyMarca.svg',
@@ -23,7 +24,11 @@ class LoginView extends StatelessWidget {
                       Theme.of(context).colorScheme.primary, BlendMode.srcIn
                   ),
                 ),
-
+                 Text("Login",
+                  style: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                )
 
 
                 //Form
