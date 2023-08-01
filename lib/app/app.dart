@@ -13,7 +13,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedThemeColor: 4).theme(),
+      theme: AppTheme(selectedThemeColor: 2).theme(),
       home: const LoginView(),
     );
   }
