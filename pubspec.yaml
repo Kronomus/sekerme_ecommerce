@@ -44,6 +44,8 @@ dependencies:
   # equatable Un paquete de utilidad para comparar objetos en Dart.
   equatable: ^2.0.5
   flutter_svg: ^2.0.7
+  flutter_dotenv: ^5.1.0
+  supabase_flutter: ^1.10.11
   #fire base core Un paquete de Flutter que proporciona una API de plataforma unificada para autenticación, Cloud Firestore, Cloud Functions, Cloud Messaging, Cloud Storage, Remote Config y más.
   #firebase_core: ^2.15.0
   #clud firestore Un paquete de Flutter que proporciona una API de plataforma unificada para autenticación, Cloud Firestore, Cloud Functions, Cloud Messaging, Cloud Storage, Remote Config y más.
@@ -76,6 +78,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/fonts/
+    - assets/icons/
+    - assets/global/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
