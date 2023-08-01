@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mamitas/app/presentation/widgets/form_text_field.dart';
 
 class LoginView extends StatelessWidget {
 
@@ -28,10 +29,36 @@ class LoginView extends StatelessWidget {
                   style: TextStyle(
                   color: Theme.of(context).colorScheme.primary,
                 ),
-                )
+                ),
+              const SizedBox(height: 20,),
+              const MyFormTextField(
+                labelText: "Email",
+                hintText: "Enter Your email",
+                textInputType: TextInputType.emailAddress,
+                obscureText: true,
+                suffixIcon: false,
 
+              ),
+                const SizedBox(height: 20,),
+                const MyFormTextField(
+                  labelText: "Password",
+                  hintText: "Password",
+                  textInputType: TextInputType.visiblePassword,
+                  obscureText: true,
+                  suffixIcon: true,
 
-                //Form
+                ),
+                Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 1.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(onPressed: (){},
+                        child: Text('forgot your password?',),
+                    ),
+                  ],
+                ),
+                ),//Form
                 //Button
                 //TextButton
               ],
