@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mamitas/app/presentation/widgets/form_text_field.dart';
+import 'package:mamitas/app/presentation/widgets/my_button_form.dart';
 
 class LoginView extends StatelessWidget {
 
@@ -54,11 +55,20 @@ class LoginView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     TextButton(onPressed: (){},
-                        child: Text('forgot your password?',),
+                        child: Text('forgot your password?',
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
+
+                        ),
+                        ),
                     ),
                   ],
                 ),
-                ),//Form
+                ),
+                const SizedBox(height: 20),
+                MyButtonForm(text: "Login", onPressed: (){}
+                ),
+                //Form
                 //Button
                 //TextButton
               ],
