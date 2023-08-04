@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mamitas/app/presentation/views/login/views/login_divider.dart';
+import 'package:mamitas/app/presentation/views/register/register_view.dart';
 import 'package:mamitas/app/presentation/widgets/form_text_field.dart';
 import 'package:mamitas/app/presentation/widgets/my_button_form.dart';
 import 'package:mamitas/app/presentation/widgets/my_social_button.dart';
@@ -109,7 +111,11 @@ class LoginView extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+
+                       context.pushNamed(RegisterView.name);
+
+                      },
                       child: Text(
                         "Sign Up",
                         style: TextStyle(
