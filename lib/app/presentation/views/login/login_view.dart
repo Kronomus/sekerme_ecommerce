@@ -1,5 +1,6 @@
 
 import 'package:Our_School/app/presentation/views/forgot_password/forgot_%20password_view.dart';
+import 'package:Our_School/app/presentation/views/login/Login_Divider.dart';
 import 'package:Our_School/app/presentation/widgets/form_text_field.dart';
 import 'package:Our_School/app/presentation/widgets/my_button_form.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,8 @@ class LoginView extends StatelessWidget {
                   colorFilter:  ColorFilter.mode(
                       Theme.of(context).colorScheme.primary, BlendMode.srcIn
                   ),
+                  alignment: Alignment.topCenter,
+                  width: 180,
                 ),
              Text('login',
             style: TextStyle(
@@ -72,12 +75,14 @@ class LoginView extends StatelessWidget {
                 )
                 ),
                 const SizedBox(height: 20,),
-                MyButtonForm(
-                    text: 'Login',
-                    onPressed: (){}
+
+                const SizedBox(height: 20,),
+                 MyButtonForm(text: 'Login',
+                     onPressed: () {},
                 ),
+                const SizedBox(height: 10,),
 
-
+                const LoginDivider()
 
 
 
