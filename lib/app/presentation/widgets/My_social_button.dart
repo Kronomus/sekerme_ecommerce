@@ -12,8 +12,11 @@ class MySocialButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const InkWell(
-
+    return InkWell(
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16),
+        onTap: onTap,
+      ),
     );
   }
 }
