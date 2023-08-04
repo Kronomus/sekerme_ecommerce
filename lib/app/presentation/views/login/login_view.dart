@@ -1,6 +1,7 @@
 
 import 'package:Our_School/app/presentation/views/forgot_password/forgot_%20password_view.dart';
 import 'package:Our_School/app/presentation/views/login/Login_Divider.dart';
+import 'package:Our_School/app/presentation/widgets/My_social_button.dart';
 import 'package:Our_School/app/presentation/widgets/form_text_field.dart';
 import 'package:Our_School/app/presentation/widgets/my_button_form.dart';
 import 'package:flutter/material.dart';
@@ -85,9 +86,21 @@ class LoginView extends StatelessWidget {
                 const LoginDivider(),
                 const SizedBox(height: 20,),
 
-                const Row(
+                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    MySocialButton(
+                        onTap: (){},
+                      imagePath: "assets/icons/google.png",
+                    ),
+                    MySocialButton(
+                      onTap: (){},
+                      imagePath: "assets/icons/facebook.png",
+                    ),
+                    MySocialButton(
+                      onTap: (){},
+                      imagePath: "assets/icons/twitter.png",
+                    ),
 
                   ],
                 ),
