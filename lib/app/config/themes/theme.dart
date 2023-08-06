@@ -26,18 +26,22 @@ class AppTheme{
       fontFamily: 'Odin Rounded',
       // textTheme define el estilo de los textos
       textTheme: TextTheme(
+        //Titles
+        titleLarge: TextStyle(
+          fontFamily: 'Odin Rounded',
+          color: _colorTheme[selectedThemeColor],
+          fontSize: 28,
+          fontWeight: FontWeight.w600,
+        ),
         bodyLarge: TextStyle(
+          fontFamily: 'Odin Rounded Light',
           color: _colorTheme[selectedThemeColor],
-          fontSize: 20,
+          fontSize: 16,
+          fontWeight: FontWeight.w400,
         ),
-        bodyMedium: TextStyle(
-          color: _colorTheme[selectedThemeColor],
-          fontSize: 18,
-        ),
-        labelLarge: TextStyle(
-          color: _colorTheme[selectedThemeColor],
-          fontSize: 20,
-        ),
+
+
+
      ),
       appBarTheme: AppBarTheme(
         color: _colorTheme[selectedThemeColor],

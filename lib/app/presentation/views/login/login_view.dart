@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:sekerme_ecommerce/app/presentation/views/login/widgets/login_divider.dart';
-import 'package:sekerme_ecommerce/app/presentation/widgets/my_button_form.dart';
-import 'package:sekerme_ecommerce/app/presentation/widgets/my_social_button.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../widgets/my_text_form.dart';
+
+import 'package:sekerme_ecommerce/app/presentation/views/login/widgets/login_divider.dart';
+import 'package:sekerme_ecommerce/app/presentation/links_views.dart';
+import 'package:sekerme_ecommerce/app/presentation/widgets/wigdets_common_links.dart';
+
+
+
 
 class LoginView extends StatelessWidget {
 
@@ -62,7 +66,9 @@ class LoginView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       TextButton(
-                        onPressed: (){},
+                        onPressed: (){
+                          context.pushNamed(ForgotView.name);
+                        },
                         child: Text('Forgot your password?',
                           style: TextStyle(
                               color: Theme.of(context).colorScheme.primary,
@@ -113,7 +119,13 @@ class LoginView extends StatelessWidget {
                         ),
                       ),
                       TextButton(
-                        onPressed: (){},
+                        onPressed: (){
+                          //context.go('/register');
+                          //GoRouter.of(context).go('/register');
+                          //context.go(context.namedLocation(RegisterView.name));
+                          //context.goNamed(RegisterView.name);
+                          context.pushNamed(RegisterView.name);
+                        },
                         child: Text('Sing Up',
                           style: TextStyle(
                               color: Theme.of(context).colorScheme.primary,

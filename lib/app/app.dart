@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sekerme_ecommerce/app/presentation/bloc/Auth/auth_bloc.dart';
 
+import 'config/router/app_route.dart';
 import 'config/themes/theme.dart';
-import 'presentation/views/views_links.dart';
 
 
 class App extends StatelessWidget {
@@ -9,11 +11,21 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedThemeColor: 1).theme(),
-      home: const LoginView(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<AuthBloc>(
+          create: (_) => AuthBloc(),
+        ),
+      ],
+      child: MaterialApp.router(
+        //routerConfig: appRouter,
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme(selectedThemeColor: 0).theme(),
+        routeInformationProvider: appRouter.routeInformationProvider,
+        routeInformationParser: appRouter.routeInformationParser,
+        routerDelegate: appRouter.routerDelegate,
+      ),
     );
   }
 }
