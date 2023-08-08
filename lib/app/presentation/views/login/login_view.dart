@@ -3,14 +3,19 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mamitas/app/presentation/views/login/views/login_divider.dart';
 import 'package:mamitas/app/presentation/views/register/register_view.dart';
-import 'package:mamitas/app/presentation/widgets/form_text_field.dart';
-import 'package:mamitas/app/presentation/widgets/my_button_form.dart';
-import 'package:mamitas/app/presentation/widgets/my_social_button.dart';
+import 'package:mamitas/app/presentation/widgets/links_common_widgets.dart';
+
+import '../../widgets/form_text_field.dart';
+
 
 class LoginView extends StatelessWidget {
+
   static const String name = 'login_view';
 
-  const LoginView({super.key});
+  final _emailAdress = TextEditingController();
+  final _visiblePassword = TextEditingController();
+
+  LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,22 +45,24 @@ class LoginView extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const MyFormTextField(
+              MyFormTextField(
                 labelText: "Email",
                 hintText: "Enter Your email",
                 textInputType: TextInputType.emailAddress,
-                obscureText: true,
+                obscureText: false,
                 suffixIcon: false,
+                controller: _emailAdress,
               ),
               const SizedBox(
                 height: 20,
               ),
-              const MyFormTextField(
+              MyFormTextField(
                 labelText: "Password",
                 hintText: "Password",
                 textInputType: TextInputType.visiblePassword,
                 obscureText: true,
-                suffixIcon: true,
+                suffixIcon: false,
+                controller: _visiblePassword,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 1.0),
@@ -75,7 +82,11 @@ class LoginView extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              MyButtonForm(text: "Login", onPressed: () {}),
+              MyButtonForm(text: "Login", onTab: () {
+                print("Email Adress: ${_emailAdress.text}");
+                print("Password: ${_visiblePassword.text}");
+
+              }),
               const SizedBox(height: 10),
               const loginDivider(),
               const SizedBox(height: 20),
