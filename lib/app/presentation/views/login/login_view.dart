@@ -87,7 +87,7 @@ class LoginView extends StatelessWidget {
                 print("Password: ${_visiblePassword.text}");
 
               }),
-              const SizedBox(height: 10),
+              const SizedBox(height: 12),
               const loginDivider(),
               const SizedBox(height: 20),
               Row(
