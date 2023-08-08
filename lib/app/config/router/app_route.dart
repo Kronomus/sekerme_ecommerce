@@ -6,13 +6,23 @@ import 'package:go_router/go_router.dart';
 
 //Archivo que contiene los links de las vistas
 import 'package:Our_School/app/presentation/views/views_links.dart';
-
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 final appRouter = GoRouter(
   //La ruta inicial de la aplicación
   initialLocation: '/',
   // rutas de la aplicación
   routes: [
+    GoRoute(
+      path: '/',
+      builder: (context, state) {
+        if (Supabase.instance.client.auth.currentUser != null) {
+          return const HomeView();
+        } else {
+          return LoginView();
+        }
+      },
+    ),
     GoRoute(
       path: '/',
       name: HomeView.name,
@@ -26,11 +36,7 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/login',
       name: LoginView.name,
-      builder: (context, state) => const LoginView(),
+      builder: (context, state) => LoginView(),
     ),
-
   ],
-
 );
-
-

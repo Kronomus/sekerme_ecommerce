@@ -1,16 +1,16 @@
 import 'package:Our_School/app/presentation/views/login/Login_Divider.dart';
 import 'package:Our_School/app/presentation/views/register/register_view.dart';
-import 'package:Our_School/app/presentation/widgets/My_social_button.dart';
-import 'package:Our_School/app/presentation/widgets/form_text_field.dart';
-import 'package:Our_School/app/presentation/widgets/my_button_form.dart';
+import 'package:Our_School/app/presentation/widgets/links_common_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 class LoginView extends StatelessWidget {
   static const String name = 'login_view';
+  final _emailAddress = TextEditingController();
+  final _visiblePassword = TextEditingController();
 
-  const LoginView({super.key});
+  LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,22 +41,27 @@ class LoginView extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const MyFormTextField(
+               MyFormTextField(
                 labelText: 'Email',
                 hintText: 'Enter your email',
                 textInputType: TextInputType.emailAddress,
                 obscureText: false,
                 suffixIcon: false,
+                controller: _emailAddress,
               ),
               const SizedBox(
                 height: 20,
               ),
-              const MyFormTextField(
+              MyFormTextField(
                   labelText: 'Password',
                   hintText: 'password',
                   textInputType: TextInputType.visiblePassword,
                   obscureText: false,
-                  suffixIcon: true),
+                  suffixIcon: true,
+                  controller: _visiblePassword,
+              ),
+
+
               Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 1.0),
                   child: Row(
@@ -82,7 +87,11 @@ class LoginView extends StatelessWidget {
               ),
               MyButtonForm(
                 text: 'Login',
-                onPressed: () {},
+                onTab: (){
+                  print('Email Address: ${_emailAddress.text}');
+                  print('Password: ${_visiblePassword.text}');
+
+                },
               ),
               const SizedBox(
                 height: 10,
