@@ -51,6 +51,7 @@ dependencies:
   #flutter_dotenv Un paquete que proporciona una API de plataforma unificada para autenticación,
   flutter_dotenv: ^5.1.0
   bloc: ^8.1.2
+  intl: ^0.18.1
 
 
 dev_dependencies:

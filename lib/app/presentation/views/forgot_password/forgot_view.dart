@@ -3,16 +3,12 @@ import 'package:flutter_svg/svg.dart';
 
 import 'package:sekerme_ecommerce/app/presentation/widgets/wigdets_common_links.dart';
 
-
-
-
-
-
-
 class ForgotView extends StatelessWidget {
   static const String name = 'forgot_view';
 
-  const ForgotView({super.key});
+  final _email = TextEditingController();
+
+  ForgotView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +34,14 @@ class ForgotView extends StatelessWidget {
                   const SizedBox(height: 16.0),
                   Text('Enter the email associated with your account',style: Theme.of(context).textTheme.bodyLarge),
                   const SizedBox(height: 16.0),
-                  const MyTextForm(
+                  MyTextForm(
                       labelText: 'Email',
                       hintText: 'Enter your email',
                       textInputType: TextInputType.emailAddress,
                       obscureText: false,
-                      suffixIcon: false,),
+                      suffixIcon: false,
+                      controller: _email,
+                  ),
                   const SizedBox(height: 20.0),
                   MyButtonForm(
                     text: 'Reset Password',

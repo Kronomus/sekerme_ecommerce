@@ -7,15 +7,14 @@ import 'package:sekerme_ecommerce/app/presentation/views/login/widgets/login_div
 import 'package:sekerme_ecommerce/app/presentation/links_views.dart';
 import 'package:sekerme_ecommerce/app/presentation/widgets/wigdets_common_links.dart';
 
-
-
-
 class LoginView extends StatelessWidget {
 
   static const String name = 'login_view';
 
+  final _user = TextEditingController();
+  final _password = TextEditingController();
 
-  const LoginView({super.key});
+ LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,20 +43,22 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16.0),
-                const MyTextForm(
-                    hintText: 'Enter your email',
-                    labelText: 'Email',
-                    textInputType: TextInputType.emailAddress,
-                    obscureText: false,
-                    suffixIcon: false,
+                MyTextForm(
+                  hintText: 'Enter your email',
+                  labelText: 'Email',
+                  textInputType: TextInputType.emailAddress,
+                  obscureText: false,
+                  suffixIcon: false,
+                  controller: _user,
                 ),
                 const SizedBox(height: 16.0),
-                const MyTextForm(
+                MyTextForm(
                     hintText: 'Enter your password',
                     labelText: 'Password',
                     textInputType: TextInputType.visiblePassword,
                     obscureText: true,
                     suffixIcon: true,
+                    controller: _password
                 ),
                 const SizedBox(height: 16.0),
                 Padding(
@@ -81,7 +82,9 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16.0),
-                MyButtonForm(text: 'Sing Up', onTap: (){}),
+                MyButtonForm(text: 'Sing Up', onTap: (){
+
+                }),
                 const SizedBox(height: 30.0),
                 const LoginDivider(),
                 const SizedBox(height: 30.0),

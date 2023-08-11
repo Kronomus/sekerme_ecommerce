@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
-// TextForm generalizado para reutilizar en cualquier formulario
+import 'package:intl/intl.dart';
 
-class MyTextForm extends StatelessWidget {
+class MyDatePicker extends StatelessWidget {
 
-  final String labelText;
-  final String hintText;
-  final TextInputType textInputType;
-  final bool obscureText;
-  final bool suffixIcon;
+  // final String labelText;
+  // final String hintText;
+  // final TextInputType textInputType;
   final TextEditingController controller;
 
-  const MyTextForm({
+  const MyDatePicker({
     super.key,
-    required this.labelText,
-    required this.hintText,
-    required this.textInputType,
-    required this.obscureText,
-    required this.suffixIcon,
     required this.controller,
+    // required this.labelText,
+    // required this.hintText,
+    // required this.textInputType
   });
 
   @override
@@ -35,13 +31,10 @@ class MyTextForm extends StatelessWidget {
           ),
         ],
       ),
-      child: TextFormField(
-        controller: controller,
-        obscureText: obscureText,
-        keyboardType: textInputType,
+      child: TextField(
         decoration: InputDecoration(
-          labelText: labelText,
-          hintText: hintText,
+          labelText: 'Date of Birth',
+          hintText: 'Date of Birth',
           hintStyle: TextStyle(
             color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
           ),
@@ -49,7 +42,23 @@ class MyTextForm extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.0),
           ),
         ),
+        readOnly: true,
+        onTap: () => _selectDate(context),
+        controller: controller,
+
       ),
     );
+  }
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(1900),
+      lastDate: DateTime.now(),
+    );
+    if (picked != null) {
+      controller.text =  DateFormat.yMMMd().format(picked);
+    }
+
   }
 }

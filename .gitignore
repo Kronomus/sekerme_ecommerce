@@ -48,3 +48,6 @@ app.*.map.json
 
 # Imagenes Propias
 /assets/images/Sekerme.png
+
+# myHttRequest
+myHttpRequest.http
