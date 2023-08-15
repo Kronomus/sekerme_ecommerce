@@ -7,8 +7,11 @@ import 'package:mamitas/app/presentation/widgets/links_common_widgets.dart';
 
 import '../../widgets/form_text_field.dart';
 
+class LoginView extends StatelessWidget{
 
-class LoginView extends StatelessWidget {
+  final _email = TextEditingController();
+  final _password = TextEditingController();
+
 
   static const String name = 'login_view';
 
@@ -51,7 +54,7 @@ class LoginView extends StatelessWidget {
                 textInputType: TextInputType.emailAddress,
                 obscureText: false,
                 suffixIcon: false,
-                controller: _emailAdress,
+                controller: _email,
               ),
               const SizedBox(
                 height: 20,
@@ -62,7 +65,7 @@ class LoginView extends StatelessWidget {
                 textInputType: TextInputType.visiblePassword,
                 obscureText: true,
                 suffixIcon: false,
-                controller: _visiblePassword,
+                controller: _password,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 1.0),
@@ -83,8 +86,8 @@ class LoginView extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               MyButtonForm(text: "Login", onTab: () {
-                print("Email Adress: ${_emailAdress.text}");
-                print("Password: ${_visiblePassword.text}");
+                print("Email Adress: ${_email.text}");
+                print("Password: ${_password.text}");
 
               }),
               const SizedBox(height: 12),
@@ -126,7 +129,7 @@ class LoginView extends StatelessWidget {
 
                        Navigator.push(context,
                            MaterialPageRoute(
-                           builder: (context) => const RegisterView())
+                           builder: (context) =>  registerView())
                        );
                       },
                       child: Text(
