@@ -1,14 +1,16 @@
 import 'package:Our_School/app/presentation/views/login/Login_Divider.dart';
-import 'package:Our_School/app/presentation/views/register/register_view.dart';
 import 'package:Our_School/app/presentation/widgets/links_common_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
 
 class LoginView extends StatelessWidget {
-  static const String name = 'login_view';
+
   final _emailAddress = TextEditingController();
   final _visiblePassword = TextEditingController();
+
+  static const String name = 'login_view';
+
+
 
   LoginView({super.key});
 
