@@ -26,15 +26,34 @@ class AppTheme{
       fontFamily: 'Odin Rounded',
       // textTheme define el estilo de los textos
       textTheme: TextTheme(
-        bodyLarge: TextStyle(
+        //Titles
+        titleLarge: TextStyle(
+          fontFamily: 'Odin Rounded',
           color: _colorTheme[selectedThemeColor],
-          fontSize: 20,
+          fontSize: 28,
+          fontWeight: FontWeight.w600,
         ),
-      ),
+        bodyLarge: TextStyle(
+          fontFamily: 'Odin Rounded Light',
+          color: _colorTheme[selectedThemeColor],
+          fontSize: 16,
+          fontWeight: FontWeight.w400,
+        ),
+
+
+
+     ),
       appBarTheme: AppBarTheme(
         color: _colorTheme[selectedThemeColor],
         foregroundColor: Colors.white,
       ),
+      bottomAppBarTheme: BottomAppBarTheme(
+        color: _colorTheme[selectedThemeColor],
+        elevation: 0,
+      ),
+
+
+
 
     );
   }
