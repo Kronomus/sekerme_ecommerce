@@ -5,7 +5,6 @@ import 'package:sekerme_ecommerce/app/presentation/bloc/Auth/auth_bloc.dart';
 import 'config/router/app_route.dart';
 import 'config/themes/theme.dart';
 
-
 class App extends StatelessWidget {
   const App({super.key});
 
