@@ -47,6 +47,8 @@ dependencies:
   #
   flutter_dotenv: ^5.1.0
   supabase_flutter: ^1.10.11
+  intl: ^0.18.1
+  crypto: ^3.0.3
   #fire base core Un paquete de Flutter que proporciona una API de plataforma unificada para autenticación, Cloud Firestore, Cloud Functions, Cloud Messaging, Cloud Storage, Remote Config y más.
   #firebase_core: ^2.15.0
   #clud firestore Un paquete de Flutter que proporciona una API de plataforma unificada para autenticación, Cloud Firestore, Cloud Functions, Cloud Messaging, Cloud Storage, Remote Config y más.

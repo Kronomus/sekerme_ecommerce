@@ -5,24 +5,32 @@ import 'package:go_router/go_router.dart';
 import 'package:mamitas/app/presentation/views/login/login_view.dart';
 import 'package:mamitas/app/presentation/views/login/views/login_divider.dart';
 import 'package:mamitas/app/presentation/views/register/register_view.dart';
+import 'package:mamitas/app/presentation/views/register/widgets/my_checkbox_box.dart';
 import 'package:mamitas/app/presentation/widgets/links_common_widgets.dart';
 
 import '../../widgets/form_text_field.dart';
 
 
-class registerView extends StatelessWidget {
+class registerView extends StatefulWidget {
 
-
-  final _email = TextEditingController();
-  final _password = TextEditingController();
-  final _nombre = TextEditingController();
 
   static const String name = 'registerView';
 
 
   registerView({super.key});
 
+  @override
+  State<registerView> createState() => _registerViewState();
+}
 
+class _registerViewState extends State<registerView> {
+  final _email = TextEditingController();
+
+  final _password = TextEditingController();
+
+  final _nombre = TextEditingController();
+
+  bool _checkbox = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,12 +109,29 @@ class registerView extends StatelessWidget {
                       ],
                     ),
                   ),
+                  const SizedBox(height: 10),
+                  MyCheckBox(
+                    value: _checkbox,
+                    onChanged: (bool? value){
+                      setState(() {
+                        _checkbox = value!;
+                      });
+                    },
+                  ),
                   const SizedBox(height: 20),
                   MyButtonForm(text: "Sing up", onTab: () {
+                    if(_checkbox==false){
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text('Pepito Perez'),
+                              backgroundColor: Theme.of(context).colorScheme.error,
+                              duration: const Duration(seconds: 2),
+                          )
+                      );
+                    }else{
                     print("Email Adress: ${_email.text}");
                     print("Password: ${_password.text}");
                     print("Nombre: ${_nombre.text}");
-                  }),
+                   };}, ),
                   const SizedBox(height: 12),
                   const loginDivider2(),
                   const SizedBox(height: 20),

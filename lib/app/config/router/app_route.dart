@@ -3,6 +3,7 @@
 //Se debe agregar la ruta en el Map de rutas
 
 import 'package:go_router/go_router.dart';
+import 'package:mamitas/app/presentation/views/forgot_password/forgot_%20password_view.dart';
 
 //Archivo que contiene los links de las vistas
 import 'package:mamitas/app/presentation/views/views_links.dart';
@@ -41,6 +42,11 @@ final appRouter = GoRouter(
       path: '/login',
       name: LoginView.name,
       builder: (context, state) => LoginView(),
+    ),
+    GoRoute(
+      path: '/forgotPassword',
+      name: ForgotPasswordView.name,
+      builder: (context, state) => ForgotPasswordView(),
     ),
 
   ],
