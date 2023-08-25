@@ -54,6 +54,8 @@ dependencies:
   flutter_dotenv: ^5.1.0
   # intl Un paquete que proporciona una API de plataforma unificada para autenticación,
   intl: ^0.18.1
+  # crypto paquete de encriptación de datos
+  crypto: ^3.0.3
 
 
 dev_dependencies:
