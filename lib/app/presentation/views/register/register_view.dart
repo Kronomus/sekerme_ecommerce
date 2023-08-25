@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mamitas/app/config/security/encript.dart';
 import 'package:mamitas/app/presentation/views/login/login_view.dart';
 import 'package:mamitas/app/presentation/views/login/views/login_divider.dart';
 import 'package:mamitas/app/presentation/views/register/register_view.dart';
@@ -128,9 +129,9 @@ class _registerViewState extends State<registerView> {
                           )
                       );
                     }else{
-                    print("Email Adress: ${_email.text}");
-                    print("Password: ${_password.text}");
-                    print("Nombre: ${_nombre.text}");
+                    print(encript("Email Adress: ${_email.text}");
+                    print(encript("Password: ${_password.text}");
+                    print(encript("Nombre: ${_nombre.text}");
                    };}, ),
                   const SizedBox(height: 12),
                   const loginDivider2(),
