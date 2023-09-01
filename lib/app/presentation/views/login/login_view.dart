@@ -83,7 +83,8 @@ class LoginView extends StatelessWidget {
                 ),
                 const SizedBox(height: 16.0),
                 MyButtonForm(text: 'Sing Up', onTap: (){
-
+                  print(_user.text);
+                  print(_password.text);
                 }),
                 const SizedBox(height: 30.0),
                 const LoginDivider(),
