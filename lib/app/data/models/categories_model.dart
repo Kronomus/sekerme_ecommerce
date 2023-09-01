@@ -1,5 +1,4 @@
 
-
 class CategoriesModel {
 
   final String category_name;
