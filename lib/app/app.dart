@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sekerme_ecommerce/app/presentation/bloc/Auth/auth_bloc.dart';
+import 'package:sekerme_ecommerce/app/presentation/bloc/auth/auth_bloc.dart';
 
 import 'config/router/app_route.dart';
 import 'config/themes/theme.dart';
